@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/clang1996/wheelsUI-vue/issues"
   },
-  "homepage": "https://github.com/clang1996/wheelsUI-vue#readme"
+  "homepage": "https://github.com/clang1996/wheelsUI-vue#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
