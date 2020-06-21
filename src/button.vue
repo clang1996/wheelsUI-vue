@@ -1,30 +1,47 @@
 <template>
 	<button :class="{[`icon-${iconPosition}`]:true}" class="button">
-		<g-icon v-if="icon" :name="icon" />
+		<g-icon :name="icon" v-if="icon"></g-icon>
 		<div class="content">
-			<slot/>
+			<slot />
 		</div>
 	</button>
 </template>
 <script>
     export default {
         props: {
-            icon:{},
-	        iconPosition:{
-                type:String,
-		        default:'left',
-		        validator(value){
-		            return value==='left' || value==='right'
-		        }
-	        }
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
+                    return value === 'left' || value === 'right'
+                }
+            }
         }
     }
 </script>
 <style lang="scss">
 	.button {
-		margin-top: 20px;
+		font-size: var(--font-size);
+		height: var(--button-height);
 		padding: 0 1em;
-		font-size: 14px;
+		border-radius: var(--border-radius);
+		border: 1px solid var(--border-color);
+		background: var(--button-bg);
+		
+		&:hover {
+			border-color: var(--border-color-hover);
+		}
+		
+		&:active {
+			background-color: var(--button-active-bg);
+		}
+		
+		&:focus {
+			outline: none;
+		}
+		
+		margin-top: 20px;
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
@@ -38,7 +55,7 @@
 			order: 1;
 			width: 1em;
 			height: 1em;
-			margin:0 .3em;
+			margin: 0 .3em;
 		}
 		
 		&.icon-right {
@@ -48,7 +65,7 @@
 			
 			> .icon {
 				order: 2;
-				margin:0 .3em;
+				margin: 0 .3em;
 			}
 		}
 	}
