@@ -1,5 +1,5 @@
 <template>
-	<div class="button-group">
+	<div class="g-button-group">
 		<slot />
 	</div>
 </template>
@@ -9,7 +9,7 @@ export default {
     mounted() {
         for (let node of this.$el.children) {
             let name = node.nodeName.toLocaleLowerCase()
-            if (name !== button) {
+            if (name !== 'button') {
                 console.warn(`g-button-group 的子元素应该全部是button, 而这里写的是${name}`)
             }
         }
@@ -18,31 +18,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button-group {
-	display: inline-flex;
-	vertical-align: top;
-	
-	> button {
-		border-radius: 0;
+	.g-button-group {
+		display: inline-flex;
+		vertical-align: top;
 		
-		&:not(:first-child) {
-			margin-left: -1px;
-		}
-		
-		&:first-child {
-			border-bottom-left-radius: var(--border-radius);
-			border-top-left-radius: var(--border-radius);
-		}
-		
-		&:last-child {
-			border-bottom-right-radius: var(--border-radius);
-			border-top-right-radius: var(--border-radius);
-		}
-		
-		&:hover {
-			position: relative;
-			z-index: 1;
+		> .g-button {
+			border-radius: 0;
+			
+			&:not(:first-child) {
+				margin-left: -1px;
+			}
+			
+			&:first-child {
+				border-bottom-left-radius: var(--border-radius);
+				border-top-left-radius: var(--border-radius);
+			}
+			
+			&:last-child {
+				border-bottom-right-radius: var(--border-radius);
+				border-top-right-radius: var(--border-radius);
+			}
+			
+			&:hover {
+				position: relative;
+				z-index: 1;
+			}
 		}
 	}
-}
 </style>

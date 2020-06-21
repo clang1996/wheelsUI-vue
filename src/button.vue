@@ -1,50 +1,57 @@
 <template>
 	<button :class="{[`icon-${iconPosition}`]:true}"
 	        @click="$emit('click')"
-	        class="button">
-		<g-icon v-if="icon && !loading" class="icon" :name="icon" ></g-icon>
-		<g-icon v-if="loading" name="loading" class="loading icon"></g-icon>
+	        class="g-button">
+		<g-icon :name="icon" class="icon" v-if="icon && !loading"></g-icon>
+		<g-icon class="loading icon" name="loading" v-if="loading"></g-icon>
 		<div class="content">
 			<slot />
 		</div>
 	</button>
 </template>
 <script>
-    export default {
-        props: {
-            icon: {},
-	        loading:{
-              type:Boolean,
-		      default: false
-	        },
-            iconPosition: {
-                type: String,
-                default: 'left',
-                validator(value) {
-                    return value === 'left' || value === 'right'
-                }
-            }
-        }
-    }
+	  import Icon from './icon'
+      export default {
+          components: {
+              'g-icon': Icon
+          },
+          props: {
+              icon: {},
+              loading: {
+                  type: Boolean,
+                  default: false
+              },
+              iconPosition: {
+                  type: String,
+                  default: 'left',
+                  validator(value) {
+                      return value === 'left' || value === 'right'
+                  }
+              }
+          }
+      }
 </script>
 <style lang="scss">
-	.loading{
-		animation:spin 1s infinite linear;
-	}
+	
 	@keyframes spin {
-		0%{
+		0% {
 			transform: rotate(0deg);
 		}
-		100%{
+		100% {
 			transform: rotate(360deg);
 		}
 	}
-	.button {
+	
+	.g-button {
 		
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
 		vertical-align: top;
+		
+		.loading {
+			animation: spin 1s infinite linear;
+		}
 		
 		> .content {
 			order: 2
@@ -54,7 +61,7 @@
 			order: 1;
 			width: 1em;
 			height: 1em;
-			margin: 0 .3em;
+			margin-right: .1em;
 		}
 		
 		&.icon-right {
@@ -64,7 +71,8 @@
 			
 			> .icon {
 				order: 2;
-				margin: 0 .3em;
+				margin-right: 0;
+				margin-left: .1em;
 			}
 		}
 		
