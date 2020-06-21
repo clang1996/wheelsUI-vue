@@ -1,29 +1,45 @@
 <template>
 	<div class="button-group">
-		<slot/>
+		<slot />
 	</div>
 </template>
 
 <script>
-export default {}
+export default {
+    mounted() {
+        for (let node of this.$el.children) {
+            let name = node.nodeName.toLocaleLowerCase()
+            if (name !== button) {
+                console.warn(`g-button-group 的子元素应该全部是button, 而这里写的是${name}`)
+            }
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>
-.button-group{
+.button-group {
 	display: inline-flex;
 	vertical-align: top;
+	
 	> button {
 		border-radius: 0;
-		margin-left:-1px ;
-		&:first-child{
+		
+		&:not(:first-child) {
+			margin-left: -1px;
+		}
+		
+		&:first-child {
 			border-bottom-left-radius: var(--border-radius);
 			border-top-left-radius: var(--border-radius);
 		}
-		&:last-child{
+		
+		&:last-child {
 			border-bottom-right-radius: var(--border-radius);
 			border-top-right-radius: var(--border-radius);
 		}
-		&:hover{
+		
+		&:hover {
 			position: relative;
 			z-index: 1;
 		}
