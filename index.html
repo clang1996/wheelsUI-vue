@@ -41,10 +41,10 @@
 </head>
 <body>
 <div id="app">
-	<div class="box">
-		<g-input v-model="message"></g-input>
-		<p>{{message}}</p>
-	</div>
+		<g-row>
+			<g-col span="2">1231</g-col>
+			<g-col span="22">12</g-col>
+		</g-row>
 	<div class="box">
 	<g-button :loading="loading1" @click="loading1 = !loading1">
     按钮
@@ -65,17 +65,7 @@
 		<g-button icon="right" icon-position="right">下一页</g-button>
 	</g-button-group>
 	</div>
-
 </div>
-
-
-
-
-
-
-
-
-
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1897600_3pozg10s9ho.js"></script>
 </body>
