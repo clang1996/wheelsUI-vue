@@ -5,7 +5,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+    props: {
+        gutter: {
+            type: [Number, String]
+        }
+    },
+    mounted() {
+        this.$children.forEach((vm) => {
+            vm.gutter = this.gutter
+        })
+    }
+}
 </script>
 
 <style lang="scss" scoped>
