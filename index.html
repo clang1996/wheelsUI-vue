@@ -14,6 +14,8 @@
 			 box-sizing: border-box;
 		 }
 		
+		 img {max-width: 100%;}
+		
 		 html {
 			 --button-height: 32px;
 			 --font-size: 14px;
@@ -40,39 +42,20 @@
 
 </head>
 <body>
+<style>
+	.demo {
+		background: #ccc;
+		border: 1px solid red;
+		height: 100px;
+	}
+</style>
 <div id="app">
-		<g-row gutter='2'>
-			<g-col span="2">1231</g-col>
-			<g-col span="22">12</g-col>
-		</g-row>
-		<g-row>
-			<g-col span="8">1231</g-col>
-			<g-col offset='10' span="18">12</g-col>
-		</g-row>
-		<g-row>
-			<g-col span="2">1231</g-col>
-			<g-col offset='2' span="20">12</g-col>
-		</g-row>
-	<div class="box">
-	<g-button :loading="loading1" @click="loading1 = !loading1">
-    按钮
-    </g-button>
-    <g-button :loading="loading2" @click="loading2 = !loading2"
-              icon="settings"
-    >
-    按钮
-    </g-button>
-    <g-button :loading="loading3" @click="loading3 = !loading3" icon="settings"
-              icon-position="right"
-    >
-    按钮
-    </g-button>
-	<g-button-group>
-		<g-button icon="left">上一页</g-button>
-		<g-button>更多</g-button>
-		<g-button icon="right" icon-position="right">下一页</g-button>
-	</g-button-group>
-	</div>
+	<g-row>
+		<g-col :narrow-pc='{span:12,offset:12}' span='23' offset='1'>
+			<div class='demo'></div>
+		</g-col>
+		
+	</g-row>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1897600_3pozg10s9ho.js"></script>
