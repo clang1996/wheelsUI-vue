@@ -2,9 +2,9 @@
   <div :class="{error}" class="wrapper">
   	    <label>
   	        <input :disabled="disabled" :readonly="readonly"
-                   :value="value" @blur="$emit('blur',$event)"
-                   @change="$emit('change',$event)"
-                   @focus="$emit('focus',$event)"
+                   :value="value" @blur="$emit('blur',$event.target.value)"
+                   @change="$emit('change',$event.target.value)"
+                   @focus="$emit('focus',$event.target.value)"
                    @input="$emit('input',$event.target.value)"
                    type="text"
             />
