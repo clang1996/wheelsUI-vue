@@ -46,8 +46,8 @@ export default {
 	
 	&.align-left {justify-content: flex-start;}
 	
-	&.align-center {justify-content: flex-end;}
+	&.align-center {justify-content: center;}
 	
-	&.align-right {justify-content: center;}
+	&.align-right {justify-content: flex-end;}
 	}
 </style>
