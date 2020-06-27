@@ -51,6 +51,7 @@
         },
         mounted() {
             this.updateStyle()
+            this.$emit('beforeClose')
             this.execAutoClose()
         },
         methods: {
@@ -88,8 +89,13 @@
 	$font-size: 14px;
 	$toast-min-height: 40px;
 	$toast-bg: rgba(0, 0, 0, .75);
+	@keyframes fade-in {
+		0% {opacity: 0;transform: translateY(100%)}
+		100% {opacity: 1;transform: translateY(0%)}
+		}
 	
 	.toast {
+		animation: fade-in 1s;
 		display: flex;
 		align-items: center;
 		font-size: $font-size;
