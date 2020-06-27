@@ -36,9 +36,11 @@ new Vue({
         message: 'hi'
     },
     created() {
-        this.$toast(
-            '王雷', {enableHtml: true}
-        )
+        this.$toast('是王雷不是陈雷', {
+            enableHtml: true,
+            position: 'middle',
+            autoClose: false
+        })
     },
     methods: {
         showToast() {
