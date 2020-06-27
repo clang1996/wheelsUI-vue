@@ -1,90 +1,88 @@
 <template>
 	<div class='wrapper' :class='toastClasses'>
 		<div class='toast' ref='toast'>
-		<div class='message'>
-			<slot v-if='!enableHtml'></slot>
-			<div v-else v-html='$slots.default[0]'></div>
+			<div class='message'>
+				<slot v-if='!enableHtml'></slot>
+				<div v-else v-html='$slots.default[0]'></div>
+			</div>
+			<div class='line' ref='line'></div>
+			<span @click="onClickClose" class='close' v-if="closeButton">{{closeButton.text}}</span>
 		</div>
-		<div class='line' ref='line'></div>
-		<span @click="onClickClose" class='close' v-if="closeButton">{{closeButton.text}}</span>
-	</div>
 	</div>
 </template>
-
 <script>
-    export default {
-        name: 'Wheels-toast',
-        props: {
-            autoClose: {
-                type: Boolean,
-                default: true
-            },
-            autoCloseDelay: {
-                type: Number,
-                default: 50
-            },
-            closeButton: {
-                type: Object,
-                default() {    //default是对象的时候必须写成函数，把对象return出来
-                    return {
-                        text: '关闭',
-                        callback: undefined
-                    }
-                }
-            },
-            enableHtml: {
-                type: Boolean,
-                default: false
-            },
-            position: {
-                type: String,
-                default: 'top',
-                validator(value) {
-                    return ['top', 'bottom', 'middle'].indexOf(value) >= 0
-                }
-            }
-        },
-        computed: {
-            toastClasses() {
-                return {[`position-${this.position}`]: true}
-            }
-        },
-        mounted() {
-            this.updateStyle()
-            this.execAutoClose()
-        },
-        methods: {
-            execAutoClose() {
-                if (this.autoClose) {
-                    setTimeout(() => {
-                        this.close()
-                    }, this.autoCloseDelay * 1000)
-                }
-            },
-            updateStyle() {
-                this.$nextTick(() => {
-                    this.$refs.line.style.height =
-                        `${this.$refs.toast.getBoundingClientRect().height}px`
-                })
-            },
-            close() {
-                this.$el.remove()
-                this.$emit('beforeClose')
-                this.$destroy()  //destroy不会清除元素
-            },
-            onClickClose() {
-                this.close()
-                if (this.closeButton && typeof this.closeButton.callback === 'function') {
-                    this.closeButton.callback(this)
-                }
-            },
-            log() {
-                console.log('王雷');
-            }
-        }
-    }
+	export default {
+		name:'Wheels-toast',
+		props:{
+			autoClose:{
+				type:Boolean,
+				default:true
+			},
+			autoCloseDelay:{
+				type:Number,
+				default:50
+			},
+			closeButton:{
+				type:Object,
+				default() {    //default是对象的时候必须写成函数，把对象return出来
+					return {
+						text:'关闭',
+						callback:undefined
+					}
+				}
+			},
+			enableHtml:{
+				type:Boolean,
+				default:false
+			},
+			position:{
+				type:String,
+				default:'top',
+				validator(value) {
+					return ['top', 'bottom', 'middle'].indexOf(value) >= 0
+				}
+			}
+		},
+		computed:{
+			toastClasses() {
+				return {[`position-${this.position}`]:true}
+			}
+		},
+		mounted() {
+			this.updateStyle()
+			this.execAutoClose()
+		},
+		methods:{
+			execAutoClose() {
+				if (this.autoClose) {
+					setTimeout(() => {
+						this.close()
+					}, this.autoCloseDelay * 1000)
+				}
+			},
+			updateStyle() {
+				this.$nextTick(() => {
+					this.$refs.line.style.height =
+						`${this.$refs.toast.getBoundingClientRect().height}px`
+				})
+			},
+			close() {
+				this.$el.remove()
+				this.$emit('beforeClose')
+				this.$destroy()  //destroy不会清除元素
+			},
+			onClickClose() {
+				this.close()
+				if (this.closeButton && typeof this.closeButton.callback === 'function') {
+					this.closeButton.callback(this)
+				}
+			},
+			log() {
+				console.log('王雷');
+			}
+		}
+	}
 </script>
-
 <style lang="scss" scoped>
 	$font-size: 14px;
 	$toast-min-height: 40px;

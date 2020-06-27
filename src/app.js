@@ -26,37 +26,33 @@ Vue.component('g-header', Header)
 Vue.component('g-footer', Footer)
 Vue.component('g-toast', Toast)
 Vue.use(plugin)
-
 new Vue({
-            el: '#app',
-            data: {
-                loading1: true,
-                loading2: true,
-                loading3: false,
-                message: 'hi'
-            },
-            created() {
-
-            },
-            methods: {
-                showToast1() {
-                    this.showToast('top')
-                },
-                showToast2() {
-                    this.showToast('middle')
-
-                },
-                showToast3() {
-                    this.showToast('bottom')
-
-                },
-                showToast(position) {
-                    this.$toast('是王雷不是陈雷', {
-                        enableHtml: true,
-                        position,
-                        autoClose: false
-                    })
-                }
-            }
-        })
+	el:'#app',
+	data:{
+		loading1:true,
+		loading2:true,
+		loading3:false,
+		message:'hi'
+	},
+	created() {
+	},
+	methods:{
+		showToast1() {
+			this.showToast('top')
+		},
+		showToast2() {
+			this.showToast('middle')
+		},
+		showToast3() {
+			this.showToast('bottom')
+		},
+		showToast(position) {
+			this.$toast('是王雷不是陈雷', {
+				enableHtml:true,
+				position,
+				autoClose:false
+			})
+		}
+	}
+})
 
