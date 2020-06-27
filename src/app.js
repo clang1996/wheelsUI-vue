@@ -10,7 +10,7 @@ import Content from './components/content'
 import Sider from './components/sider'
 import Header from './components/sider'
 import Footer from './components/footer'
-import Toast from './components/toast'
+import Toast from './toast'
 import plugin from './components/plugin'
 
 Vue.component('g-button', Button)
@@ -50,7 +50,7 @@ new Vue({
 			this.$toast('是王雷不是陈雷', {
 				enableHtml:true,
 				position,
-				autoClose:false
+				autoClose:3
 			})
 		}
 	}

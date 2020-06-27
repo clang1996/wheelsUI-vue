@@ -1,10 +1,15 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
     <CssCodeStyleSettings>
+      <option name="BLANK_LINES_BETWEEN_BLOCKS" value="0" />
+      <option name="BLANK_LINES_AROUND_NESTED_SELECTOR" value="0" />
       <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
+      <option name="ALIGN_CLOSING_BRACE_WITH_PROPERTIES" value="true" />
+      <option name="ENFORCE_QUOTES_ON_FORMAT" value="true" />
     </CssCodeStyleSettings>
     <HTMLCodeStyleSettings>
       <option name="HTML_ATTRIBUTE_WRAP" value="0" />
+      <option name="HTML_TEXT_WRAP" value="0" />
       <option name="HTML_KEEP_LINE_BREAKS" value="false" />
       <option name="HTML_KEEP_LINE_BREAKS_IN_TEXT" value="false" />
       <option name="HTML_KEEP_BLANK_LINES" value="0" />
@@ -32,6 +37,14 @@
       <option name="ALIGN_CLOSING_BRACE_WITH_PROPERTIES" value="true" />
       <option name="ENFORCE_QUOTES_ON_FORMAT" value="true" />
     </ScssCodeStyleSettings>
+    <codeStyleSettings language="CSS">
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="0" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
     <codeStyleSettings language="HTML">
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
