@@ -1,13 +1,53 @@
 <template>
-	<div class="tabs-item">
+	<div class="tabs-item" @click="xxx" :class="classes">
 		<slot></slot>
 	</div>
 </template>
 <script>
-	export default {}
+	export default {
+		inject:['eventBus'],
+		data() {
+			return {
+				active:{
+					type:Boolean,
+					default:false
+				}
+			}
+		},
+		props:{
+			disabled:{
+				type:Boolean,
+				default:false
+			},
+			name:{
+				type:String,
+				required:true
+			}
+		},
+		computed:{
+			classes() {
+				return {active:this.active}
+			}
+		},
+		created() {
+			this.eventBus.$on('update:selected',
+				(name) => {
+					this.active = name === this.name;
+				})
+		},
+		methods:{
+			xxx() {
+				this.eventBus.$emit('update:selected', this.name)
+			}
+		}
+	}
 </script>
 <style lang="scss" scoped>
-	.tabs-item {
-
+	.tabs-item{
+		padding:0 1em;
+		flex-shrink:0;
+		&.active{
+			background:#f00;
+			}
 		}
 </style>

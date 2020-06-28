@@ -39,10 +39,7 @@ Vue.use(plugin)
 new Vue({
 	el:'#app',
 	data:{
-		loading1:true,
-		loading2:true,
-		loading3:false,
-		message:'hi'
+		selectedTabs:'sports',
 	},
 	created() {
 	},
