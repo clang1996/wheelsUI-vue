@@ -12,6 +12,11 @@ import Header from './components/sider'
 import Footer from './components/footer'
 import Toast from './toast'
 import plugin from './components/plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -25,6 +30,11 @@ Vue.component('g-sider', Sider)
 Vue.component('g-header', Header)
 Vue.component('g-footer', Footer)
 Vue.component('g-toast', Toast)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
 Vue.use(plugin)
 new Vue({
 	el:'#app',
@@ -36,23 +46,6 @@ new Vue({
 	},
 	created() {
 	},
-	methods:{
-		showToast1() {
-			this.showToast('top')
-		},
-		showToast2() {
-			this.showToast('middle')
-		},
-		showToast3() {
-			this.showToast('bottom')
-		},
-		showToast(position) {
-			this.$toast('是王雷不是陈雷', {
-				enableHtml:true,
-				position,
-				autoClose:3
-			})
-		}
-	}
+	methods:{}
 })
 

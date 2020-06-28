@@ -31,9 +31,24 @@
 </head>
 <body>
 <div id="app">
-	<button @click="showToast1">top</button>
-	<button @click="showToast2">middle</button>
-	<button @click="showToast3">bottom</button>
+	<g-tabs :selected.sync="selectedTabs">
+		<g-tabs-head>
+			<template slot="actions">
+				<button>设置</button>
+			</template>
+			<g-tabs-item name="fashion">
+				<g-icon name="love"></g-icon>
+				时尚
+			</g-tabs-item>
+			<g-tabs-item name="sports" disabled>体育</g-tabs-item>
+			<g-tabs-item name="finance">财经</g-tabs-item>
+		</g-tabs-head>
+		<g-tabs-body>
+			<g-tabs-pane name="fashion">时尚资讯</g-tabs-pane>
+			<g-tabs-pane name="sports">体育资讯</g-tabs-pane>
+			<g-tabs-pane name="finance">财经资讯</g-tabs-pane>
+		</g-tabs-body>
+	</g-tabs>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1897600_3pozg10s9ho.js"></script>
