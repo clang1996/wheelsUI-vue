@@ -1,5 +1,5 @@
 <template>
-	<div :class="classes" :data-name="name" @click="xxx" class="tabs-item">
+	<div :class="classes" :data-name="name" @click="onClick" class="tabs-item">
 		<slot></slot>
 	</div>
 </template>
@@ -9,10 +9,7 @@
 		inject:['eventBus'],
 		data() {
 			return {
-				active:{
-					type:Boolean,
-					default:false
-				}
+				active:false
 			}
 		},
 		props:{
@@ -27,18 +24,29 @@
 		},
 		computed:{
 			classes() {
-				return {active:this.active}
+				return {
+					active:this.active,
+					disabled:this.disabled
+				}
 			}
 		},
 		created() {
-			this.eventBus.$on('update:selected',
-				(name) => {
-					this.active = name === this.name;
-				})
+			if (this.eventBus) {
+				console.log(this.eventBus);
+				this.eventBus.$on('update:selected',
+					(name) => {
+						this.active = name === this.name;
+					})
+			}
 		},
 		methods:{
-			xxx() {
-				this.eventBus.$emit('update:selected', this.name, this)
+			onClick() {
+				if (this.disabled) {
+					return
+				}
+				console.log(1);
+				this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
+				this.$emit('click', this)
 			}
 		}
 	}
@@ -54,6 +62,10 @@
 		&.active{
 			color:#fff;
 			background:#42b883;
+			}
+		&.disabled{
+			color:#eee;
+			cursor:not-allowed;
 			}
 		}
 </style>

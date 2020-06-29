@@ -1,7 +1,6 @@
 import {describe} from 'mocha';
 import Vue from 'vue'
 import Toast from '../src/toast'
-
 const expect = chai.expect;
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -62,7 +61,6 @@ describe('Toast', () => {
 					position:'bottom'
 				}
 			}).$mount()
-			console.log(vm.$el.outerHTML)
 			expect(vm.$el.classList.contains('position-bottom')).to.eq(true)
 		});
 	})

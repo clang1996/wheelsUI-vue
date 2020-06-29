@@ -5,7 +5,6 @@
 </template>
 <script>
 	import Vue from 'vue'
-
 	export default {
 		name:'WheelsTab',
 		props:{
@@ -28,6 +27,9 @@
 			return {eventBus:this.eventBus}
 		},
 		mounted() {
+			if (this.$children.length === 0) {
+				console && console.warn && console.warn('tabs没有子组件tabs-head和tabs-body')
+			}
 			this.$children.forEach((vm) => {
 				if (vm.$options.name === 'WheelsTabsHead') {
 					vm.$children.forEach((childVm) => {
