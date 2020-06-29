@@ -7,7 +7,7 @@
 	import Vue from 'vue'
 
 	export default {
-		name:'WheelsTabHeader',
+		name:'WheelsTab',
 		props:{
 			selected:{
 				type:String,
@@ -28,12 +28,21 @@
 			return {eventBus:this.eventBus}
 		},
 		mounted() {
-			this.eventBus.$emit('update:selected', this.selected)
+			this.$children.forEach((vm) => {
+				if (vm.$options.name === 'WheelsTabsHead') {
+					vm.$children.forEach((childVm) => {
+						if (childVm.$options.name === 'WheelsTabsItem'
+							&& childVm.name === this.selected) {
+							this.eventBus.$emit('update:selected', this.selected, childVm)
+						}
+					})
+				}
+			})
 		}
 	}
 </script>
 <style lang="scss" scoped>
-	.tabs {
+	.tabs{
 
 		}
 </style>

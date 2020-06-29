@@ -1,10 +1,11 @@
 <template>
-	<div class="tabs-item" @click="xxx" :class="classes">
+	<div :class="classes" :data-name="name" @click="xxx" class="tabs-item">
 		<slot></slot>
 	</div>
 </template>
 <script>
 	export default {
+		name:'WheelsTabsItem',
 		inject:['eventBus'],
 		data() {
 			return {
@@ -37,7 +38,7 @@
 		},
 		methods:{
 			xxx() {
-				this.eventBus.$emit('update:selected', this.name)
+				this.eventBus.$emit('update:selected', this.name, this)
 			}
 		}
 	}
@@ -46,8 +47,13 @@
 	.tabs-item{
 		padding:0 1em;
 		flex-shrink:0;
+		cursor:pointer;
+		height:100%;
+		display:flex;
+		align-items:center;
 		&.active{
-			background:#f00;
+			color:#fff;
+			background:#42b883;
 			}
 		}
 </style>
