@@ -5,7 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "start": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
   "homepage": "https://github.com/clang1996/wheelsUI-vue#readme",
   "dependencies": {
     "components": "^0.1.0",
+    "node-sass": "npm:undefined@^0.1.0",
     "toast": "^0.2.6",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
@@ -38,11 +42,14 @@
     "karma-mocha": "^2.0.1",
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^8.0.1",
+    "nodemon": "^2.0.4",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.2"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

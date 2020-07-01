@@ -4,8 +4,9 @@
 	</svg>
 </template>
 <script>
+	import './svg'
 	export default {
-	    props:['name']
+		props:['name']
 	}
 </script>
 <style lang="scss" scoped>
