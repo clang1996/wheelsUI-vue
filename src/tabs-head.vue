@@ -31,14 +31,14 @@
 		> .line{
 			position:absolute;
 			bottom:0;
-			border:2px solid #444;
+			border:1px solid #444444;
 			transition:all 400ms;
 			}
 		> .actions-wrapper{
 			display:flex;
 			align-items:center;
 			justify-content:center;
-			padding:1em;
+			padding:0 1em;
 			margin-left:auto;
 			}
 		}

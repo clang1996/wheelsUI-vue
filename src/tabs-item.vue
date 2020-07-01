@@ -32,7 +32,6 @@
 		},
 		created() {
 			if (this.eventBus) {
-				console.log(this.eventBus);
 				this.eventBus.$on('update:selected',
 					(name) => {
 						this.active = name === this.name;
@@ -44,7 +43,6 @@
 				if (this.disabled) {
 					return
 				}
-				console.log(1);
 				this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
 				this.$emit('click', this)
 			}
