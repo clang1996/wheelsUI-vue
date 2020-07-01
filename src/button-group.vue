@@ -18,25 +18,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.g-button-group {
-		display: inline-flex;
-		vertical-align: top;
-		
-		> .g-button {
-			border-radius: 0;
+	$button-height:32px;
+	$font-size:14px;
+	$button-bg:white;
+	$button-active-bg:#eeeeee;
+	$border-radius:4px;
+	$color:#333333;
+	$border-color:#999999;
+	$border-color-hover:#666666;
+	.g-button-group{
+		display:inline-flex;
+		vertical-align:top;
+		> .g-button{
+			border-radius:0;
+			&:not(:first-child){
+				margin-left:-1px;
+				}
 			
-			&:not(:first-child) {
-				margin-left: -1px;
+			&:first-child{
+				border-bottom-left-radius:$border-radius;
+				border-top-left-radius:$border-radius;
 			}
 			
-			&:first-child {
-				border-bottom-left-radius: var(--border-radius);
-				border-top-left-radius: var(--border-radius);
-			}
-			
-			&:last-child {
-				border-bottom-right-radius: var(--border-radius);
-				border-top-right-radius: var(--border-radius);
+			&:last-child{
+				border-bottom-right-radius:$border-radius;
+				border-top-right-radius:$border-radius;
 			}
 			
 			&:hover {
