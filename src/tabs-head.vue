@@ -2,9 +2,7 @@
 	<div class="tabs-head">
 		<slot></slot>
 		<div class="line" ref="line"></div>
-		<div class="actions-wrapper">
-			<slot name="actions"></slot>
-		</div>
+
 	</div>
 </template>
 <script>
@@ -14,6 +12,7 @@
 		mounted() {
 			this.eventBus.$on('update:selected', (item, vm) => {
 				let {width, height, left, top} = vm.$el.getBoundingClientRect()
+				console.log(width, height, left, top);
 				this.$refs.line.style.width = `${width}px`
 				this.$refs.line.style.left = `${left}px`
 			})
@@ -31,7 +30,7 @@
 		> .line{
 			position:absolute;
 			bottom:0;
-			border:1px solid #444444;
+			border-bottom:5px solid #444444;
 			transition:all 400ms;
 			}
 		> .actions-wrapper{
