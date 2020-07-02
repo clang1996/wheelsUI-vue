@@ -66,7 +66,6 @@
 </script>
 <style lang="scss" scoped>
 	.col{
-		background:#42b883;
 		$class-prefix:col-;
 		@for $n from 1 through 24{
 			&.#{$class-prefix}#{$n}{
