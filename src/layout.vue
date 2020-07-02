@@ -1,38 +1,34 @@
-
 <template>
-  <div class="layout" :class="layoutClass">
-    <slot></slot>
-  </div>
+	<div class="layout" :class="layoutClass">
+		<slot></slot>
+	</div>
 </template>
 <script>
-  export default {
-    name: 'GuluLayout',
-    data() {
-      return {
-        layoutClass: {
-          hasSider: false
-        }
-      }
-    },
-    mounted() {
-      this.$children.forEach((vm) => {
-        if (vm.$options.name === 'Wheels-sider') {
-          this.layoutClass.hasSider = true
-        }
-      })
-    }
-  }
+	export default {
+		name:'WheelsLayout',
+		data() {
+			return {
+				layoutClass:{
+					hasSider:false
+				}
+			}
+		},
+		mounted() {
+			this.$children.forEach((vm) => {
+				if (vm.$options.name === 'WheelsSider') {
+					this.layoutClass.hasSider = true
+				}
+			})
+		}
+	}
 </script>
-
 <style lang="scss" scoped>
-  .layout {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-  
-    &.hasSider {
-      flex-direction: row;
-      }
-    }
+	.layout{
+		flex-grow:1;
+		display:flex;
+		flex-direction:column;
+		&.hasSider{
+			flex-direction:row;
+			}
+		}
 </style>

@@ -1,12 +1,12 @@
 <template>
-<div class='sider'>
+<div>
 	<slot></slot>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'Wheels-sider'
+	name:'WheelsSider'
 }
 </script>
 
