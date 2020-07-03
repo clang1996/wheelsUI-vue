@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>上中下</h2>
+		<h2>布局</h2>
 		<h4>预览</h4>
 		<div>
 			<g-layout style="color: white; margin-bottom:50px;">
@@ -17,7 +17,8 @@
 		</div>
 		<h4>代码</h4>
 		<pre><code>{{content}}</code></pre>
-		<h2>上左右下</h2>
+		<h2>布局</h2>
+		<h4>预览</h4>
 		<div>
 			<g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
 				<g-header style="height: 50px; background:#42b883;">
@@ -37,7 +38,7 @@
 			</g-layout>
 		</div>
 		<pre><code>{{content3}}</code></pre>
-		<h2>左右</h2>
+		<h2>布局</h2>
 		<h4>预览</h4>
 		<div>
 			<g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
