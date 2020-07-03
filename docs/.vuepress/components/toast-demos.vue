@@ -20,9 +20,11 @@
 		<div>
 			<h2>支持HTML</h2>
 			<h4>预览</h4>
-			<div>123</div>
+			<div>
+				<g-button @click="toast5">上方弹出</g-button>
+			</div>
 			<h4>代码</h4>
-			<pre><code>{{content}}</code></pre>
+			<pre><code>{{content3}}</code></pre>
 		</div>
 	</div>
 </template>
@@ -62,6 +64,16 @@
 					}
 				})
 			},
+			toast5() {
+				this.$toast(`<strong style="color: #f00;">我加粗变红了</strong>`, {
+					position:'top',
+					closeButton:{
+						text:'我是关闭',
+						callback:() => {console.log('我是回调');}
+					},
+					enableHtml:true,
+				})
+			},
 		},
 		data() {
 			return {
@@ -72,6 +84,7 @@
 				`.trim(),
 				content2:`
 <g-button @click="toast4">上方弹出</g-button>
+
 methods:{
   toast4() {
     this.$toast('我是提示', {
@@ -82,6 +95,19 @@ methods:{
     }
   })
 }`.trim(),
+				content3:`
+<g-button @click="toast4">上方弹出</g-button>
+
+methods:{
+ this.$toast(\`<strong style="color: #f00;">我加粗变红了</strong>\`, {
+  position:'top',
+  closeButton:{
+    text:'我是关闭',
+    callback:() => {console.log('我是回调');}
+    },
+  enableHtml:true,
+  })
+}`
 			}
 		}
 	}
