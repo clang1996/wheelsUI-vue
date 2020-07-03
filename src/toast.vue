@@ -95,19 +95,20 @@
 		0% {opacity: 0}
 		100% {opacity: 1}
 		}
-	.wrapper {
-		position: fixed;
-		left: 50%;
-		transform: translateX(-50%);
-		&.position-top {
-			top: 0;
-			.toast {
-				border-top-left-radius: 0;
-				border-top-right-radius: 0;
-				animation: slide-down .8s;
+	.wrapper{
+		position:fixed;
+		left:50%;
+		transform:translateX(-50%);
+		z-index:10000;
+		&.position-top{
+			top:0;
+			.toast{
+				border-top-left-radius:0;
+				border-top-right-radius:0;
+				animation:slide-down .8s;
 				}
 			}
-		&.position-middle {
+		&.position-middle{
 			top: 50%;
 			transform: translateX(-50%) translateY(-50%);
 			.toast {animation: fade-in .8s;}
