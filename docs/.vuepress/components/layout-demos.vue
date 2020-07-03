@@ -4,13 +4,13 @@
 		<h4>预览</h4>
 		<div>
 			<g-layout style="color: white; margin-bottom:50px;">
-				<g-footer style="height: 50px; background:lightskyblue;">
+				<g-footer style="height: 50px; background:#42b883;">
 					header
 				</g-footer>
-				<g-content style="height: 100px; background:deepskyblue;">
+				<g-content style="height: 100px; background: #42d999;">
 					content
 				</g-content>
-				<g-footer style="height: 50px; background:lightskyblue;">
+				<g-footer style="height: 50px; background:#42b883;">
 					footer
 				</g-footer>
 			</g-layout>
@@ -20,18 +20,18 @@
 		<h2>上左右下</h2>
 		<div>
 			<g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-				<g-header style="height: 50px; background:lightskyblue;">
+				<g-header style="height: 50px; background:#42b883;">
 					header
 				</g-header>
 				<g-layout>
 					<g-sider style="height: 100px; background:#ddd; width:200px; color: black;">
 						sider
 					</g-sider>
-					<g-content style="height: 100px; background:deepskyblue;">
+					<g-content style="height: 100px; background:#42d999;">
 						content
 					</g-content>
 				</g-layout>
-				<g-footer style="height: 50px; background:lightskyblue;">
+				<g-footer style="height: 50px; background:#42b883;">
 					footer
 				</g-footer>
 			</g-layout>
@@ -45,13 +45,13 @@
 					sider
 				</g-sider>
 				<g-layout>
-					<g-header style="height: 50px; background:lightskyblue;">
+					<g-header style="height: 50px; background:#42b883;">
 						header
 					</g-header>
-					<g-content style="height: 100px; background:deepskyblue;">
+					<g-content style="height: 100px; background:#42d999;">
 						content
 					</g-content>
-					<g-footer style="height: 50px; background:lightskyblue;">
+					<g-footer style="height: 50px; background:#42b883;">
 						footer
 					</g-footer>
 				</g-layout>
@@ -80,31 +80,31 @@
 			return {
 				content:`<div>
  <g-layout style="color: white; margin-bottom:50px;">
-  <g-header style="height: 50px; background:lightskyblue;">
+  <g-header style="height: 50px; background:#42b883;">
      header
   </g-header>
-  <g-content style="height: 100px; background:deepskyblue;">
+  <g-content style="height: 100px; background:#42d999;">
      content
   </g-content>
-  <g-footer style="height: 50px; background:lightskyblue;">
+  <g-footer style="height: 50px; background:#42b883;">
      footer
   </g-footer>
 </g-layout>
 </div>`.trim(),
 				content3:`<div>
 <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-  <g-header style="height: 50px; background:lightskyblue;">
+  <g-header style="height: 50px; background:#42b883;">
     header
   </g-header>
   <g-layout>
     <g-sider style="height: 100px; background:#ddd; width:200px; color: black;">
       sider
     </g-sider>
-    <g-content style="height: 100px; background:deepskyblue;">
+    <g-content style="height: 100px; background:#42d999;">
       content
     </g-content>
   </g-layout>
-  <g-footer style="height: 50px; background:lightskyblue;">
+  <g-footer style="height: 50px; background:#42b883;">
     footer
   </g-footer>
 </g-layout>
@@ -115,13 +115,13 @@
     sider
   </g-sider>
   <g-layout>
-    <g-header style="height: 50px; background:lightskyblue;">
+    <g-header style="height: 50px; background:#42b883;">
       header
     </g-header>
-    <g-content style="height: 100px; background:deepskyblue;">
+    <g-content style="height: 100px; background:#42d999;">
       content
     </g-content>
-    <g-footer style="height: 50px; background:lightskyblue;">
+    <g-footer style="height: 50px; background:#42b883;">
       footer
     </g-footer>
   </g-layout>
