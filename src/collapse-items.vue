@@ -1,6 +1,6 @@
 <template>
 	<div class="collapse-items">
-		<div class="title" @click="open=!open">{{message}}</div>
+		<div class="title" @click="toggle">{{message}}</div>
 		<div class="content" v-if="open">
 			<slot></slot>
 		</div>
@@ -9,16 +9,29 @@
 <script>
 	export default {
 		name:'WheelsCollapseItems',
+		inject:['eventBus'],
 		props:{
-			message:{
-				type:String,
-				required:true
-			}
+			message:{type:String, required:true},
+			name:{type:String, required:true}
 		},
-		data() {
-			return {
-				open:false
-			}
+		data() {return {open:false}},
+		methods:{
+			toggle() {
+				if (this.open) {
+					this.open = false
+				} else {
+					this.eventBus && this.eventBus.$emit('update:selected', this.name)
+				}
+			},
+			close() {this.open = false},
+			show() {this.open = true}
+		},
+		mounted() {
+			this.eventBus && this.eventBus.$on('update:selected', (name) => {
+				if (name === this.name) {
+					this.show()
+				} else { this.close()}
+			})
 		}
 	}
 </script>

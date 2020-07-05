@@ -41,7 +41,9 @@ Vue.component('g-collapse-items', CollapseItems)
 Vue.use(plugin)
 new Vue({
 	el:'#app',
-	data:{},
+	data() {
+		return {selected:'2'}
+	},
 	created() {
 	},
 	methods:{}
