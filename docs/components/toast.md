@@ -3,6 +3,5 @@
 # Toast
 ---
 
+<ClientOnly><toast-demos/></ClientOnly>
 
-
-<toast-demos></toast-demos>   

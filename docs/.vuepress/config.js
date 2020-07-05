@@ -1,4 +1,5 @@
 module.exports = {
+	base:'/wheelsUI-vue/',
 	title:'Wheels UI',
 	themeConfig:{
 		nav:[

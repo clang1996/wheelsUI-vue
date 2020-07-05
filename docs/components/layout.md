@@ -2,5 +2,4 @@
 
 # Layout
 
-
-<layout-demos></layout-demos>   
+ <ClientOnly><layout-demos/></ClientOnly>

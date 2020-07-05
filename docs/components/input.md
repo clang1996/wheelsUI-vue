@@ -2,7 +2,7 @@
 ---
 
 
+<ClientOnly><input-demos/></ClientOnly>
 
- <input-demos></input-demos>
  
  

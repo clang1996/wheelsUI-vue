@@ -3,5 +3,6 @@
 
 
 
- 
- <collapse-demo></collapse-demo>
+<ClientOnly>
+<collapse-demo/>
+</ClientOnly>

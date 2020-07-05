@@ -3,8 +3,8 @@
 
 
  
- 
- <tabs-demo></tabs-demo>
+<ClientOnly><tabs-demo/></ClientOnly>
+
  
  
  

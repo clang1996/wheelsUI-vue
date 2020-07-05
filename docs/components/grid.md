@@ -2,4 +2,6 @@
 # Grid
 ---
 
-<grid-demos></grid-demos>
+
+<ClientOnly><grid-demos/></ClientOnly>
+
