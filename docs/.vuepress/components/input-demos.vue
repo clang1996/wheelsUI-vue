@@ -31,18 +31,19 @@
 		data() {
 			return {
 				value:'',
-				content:`<div class="wrapper"><label>
-  <g-input value="Wheels" />
-  <g-input value="Wheels" disabled />
-  <g-input value="Wheels" readonly />
-</label>`.trim(),
+				content:`<div class="wrapper">
+  <label>
+    <g-input value="Wheels" />
+    <g-input value="Wheels" disabled />
+    <g-input value="Wheels" readonly />
+  </label>
+</div>`.trim(),
 				content2:`<label>
   <g-input v-model="value"/>
 </label>
 <div>
   value : {{value}}
-</div>
-				`.trim()
+</div>`.trim()
 			}
 		}
 	}
