@@ -1,7 +1,6 @@
 <template>
 	<div class="tabs-head">
 		<slot></slot>
-		<div class="line" ref="line"></div>
 
 	</div>
 </template>

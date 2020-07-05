@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<g-tabs selected="1">
+		<g-tabs :selected="selected">
 			<g-tabs-head>
-				<g-tabs-item name="1">体育</g-tabs-item>
-				<g-tabs-item name="2">财经</g-tabs-item>
+				<g-tabs-item name="1">1</g-tabs-item>
+				<g-tabs-item name="2">2</g-tabs-item>
 			</g-tabs-head>
 			<g-tabs-body>
 				<g-tabs-pane name="1">content 1</g-tabs-pane>
@@ -29,11 +29,12 @@
 		},
 		data() {
 			return {
+				selected:'2',
 				content:`
 				data:{
 				selected:1
 				}
-       <g-tabs selected="selected">
+       <g-tabs selected="1">
 						<g-tabs-head>
 						<g-tabs-item  name="1">1</g-tabs-item>
 						<g-tabs-item name="2">2</g-tabs-item>

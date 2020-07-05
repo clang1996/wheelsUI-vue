@@ -30,7 +30,20 @@
 	</style>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+	<g-tabs :selected="selected">
+		<g-tabs-head>
+			<g-tabs-item name="财经">财经</g-tabs-item>
+			<g-tabs-item name="体育">体育</g-tabs-item>
+			<g-tabs-item name="美女">美女</g-tabs-item>
+		</g-tabs-head>
+		<g-tabs-body>
+			<g-tabs-pane name="财经">财经</g-tabs-pane>
+			<g-tabs-pane name="体育">体育</g-tabs-pane>
+			<g-tabs-pane name="美女">美女</g-tabs-pane>
+		</g-tabs-body>
+	</g-tabs>
+</div>
 <script src="src/app.js"></script>
 </body>
 </html>

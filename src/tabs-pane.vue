@@ -5,6 +5,7 @@
 </template>
 <script>
 	export default {
+		name:'WheelsTabsPane',
 		inject:['eventBus'],
 		data() {
 			return {

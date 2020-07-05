@@ -38,7 +38,7 @@ Vue.use(plugin)
 new Vue({
 	el:'#app',
 	data:{
-		selectedTabs:'sports',
+		selected:'美女',
 	},
 	created() {
 	},
