@@ -42,7 +42,7 @@ Vue.use(plugin)
 new Vue({
 	el:'#app',
 	data() {
-		return {selected:'2'}
+		return {selected:['2']}
 	},
 	created() {
 	},

@@ -1,6 +1,8 @@
 <template>
 	<div class="collapse-items">
-		<div class="title" @click="toggle">{{message}}</div>
+		<div class="title" @click="toggle">
+			{{message}}
+		</div>
 		<div class="content" v-if="open">
 			<slot></slot>
 		</div>
@@ -18,19 +20,15 @@
 		methods:{
 			toggle() {
 				if (this.open) {
-					this.open = false
+					this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
 				} else {
-					this.eventBus && this.eventBus.$emit('update:selected', this.name)
+					this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
 				}
 			},
-			close() {this.open = false},
-			show() {this.open = true}
 		},
 		mounted() {
-			this.eventBus && this.eventBus.$on('update:selected', (name) => {
-				if (name === this.name) {
-					this.show()
-				} else { this.close()}
+			this.eventBus && this.eventBus.$on('update:selected', (names) => {
+				this.open = names.indexOf(this.name) >= 0;
 			})
 		}
 	}

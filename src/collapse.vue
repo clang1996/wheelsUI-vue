@@ -16,14 +16,33 @@
 			return {eventBus:this.eventBus}
 		},
 		props:{
+			single:{
+				type:Boolean,
+				default:false
+			},
 			selected:{
-				type:String
-			}
+				type:Array
+			},
+			single:{type:Boolean, default:false}
 		},
 		mounted() {
 			this.eventBus.$emit('update:selected', this.selected)
-			this.eventBus.$on('update:selected', (name) => {
-				this.$emit('update:selected', name)
+			this.eventBus.$on('update:addSelected', (name) => {
+				let selected2 = JSON.parse(JSON.stringify(this.selected))
+				if (this.single) {
+					selected2 = [name]
+				} else {
+					selected2.push(name)
+				}
+				this.eventBus.$emit('update:selected', selected2)
+				this.$emit('update:selected', selected2)
+			})
+			this.eventBus.$on('update:removeSelected', (name) => {
+				let selected2 = JSON.parse(JSON.stringify(this.selected))
+				let index = selected2.indexOf(name)
+				selected2.splice(index, 1)
+				this.eventBus.$emit('update:selected', selected2)
+				this.$emit('update:selected', selected2)
 			})
 		}
 	}
