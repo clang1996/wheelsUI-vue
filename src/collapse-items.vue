@@ -44,6 +44,7 @@
 			margin-top:-1px;
 			margin-left:-1px;
 			margin-right:-1px;
+			cursor:pointer;
 			}
 		&:first-child{
 			> .title{
@@ -55,6 +56,7 @@
 			> .title:last-child{
 				border-bottom-left-radius:4px;
 				border-bottom-right-radius:4px;
+				margin-bottom:-1px;
 				}
 			}
 		> .content{
